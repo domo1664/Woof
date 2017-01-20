@@ -1,0 +1,71 @@
+<% if !user_signed_in? %>
+
+  <style>
+
+    body{
+      background: url('/bg.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    h1{
+      color: white;
+      font-weight: bold;
+    }
+    .container-index{
+      margin-right: 15%;
+      margin-left: 15%;
+    }
+
+    .text{
+      color: white;
+      font-weight: 300;
+      font-size: 150%
+    }
+
+    .log-in{
+      margin-top: 8%;
+      float: right;
+      width: 300px;
+      height: 150px;
+    }
+
+    .sign-up{
+      float: right;
+      width: 300px;
+      height: 250px;
+    }
+
+  </style>
+
+  <div class="container-index row">
+
+    <div class="col-sm-6">
+      <h1>Welcome to Woof.</h1>
+      <p class="text">
+        Talk loosely amoungst your friends without
+        the fear of your words coming back to haunt
+        you. Share your silly thoughts or adventures.
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="log-in panel">
+
+      </div>
+
+      <div class="sign-up panel">
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+<% else %>
+  <script>document.location='/home'</script>
+<% end %>

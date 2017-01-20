@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Woof</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render '/layouts/nav' %>
+    <% if params[:id] != nil %>
+      <% if current_page?('/' + params[:id]) %>
+        <img src="head.jpg" class="profile-banner">
+        <div class="row">
+          <div class="col-sm-12" style="background-color: #2A2D34; margin-bottom:10px;">
+            <div class="container">
+              <div class="col-sm-3">&nbsp;</div>
+              <div class="col-sm-6" style="margin-top: 5px;">
+                <div class="col-sm-2" style="font-size: 100%; opacity: 0.7; color: #7D8CA3;"> WOOFS <br>
+                  <h6 style="font-size:200%; color: #0072BB; opacity: 1.2;">
+                    <%= User.find_by_username(params[:id]).posts.count %>
+                  </h6>
+                </div>
+                <div class="col-sm-2" style="font-size: 100%; opacity: 0.7; color: #7D8CA3;"> FOLLOWERS <br>
+                  <h6 style="font-size:200%; color: #0072BB; opacity: 1.2;">
+                    <%= User.find_by_username(params[:id]).followers.count %>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <center><div class="alert alert-<%= key %>" style="width: 50%;"><%= value %></div></center>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

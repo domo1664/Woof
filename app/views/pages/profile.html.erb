@@ -1,0 +1,71 @@
+<div class="row">
+
+  <div class="col-xs-3">
+    <div class="panel panel-default">
+      <div class="panel-body  no-back">
+        <div class="col-sm-12"">
+          <h3 style="font-weight: bold;">@<%= params[:id] %></h3>
+          <p>
+            I Love Poop and other things but mostly. Drawing poop,
+            taking pictures of poop and, my all time fav, taking a poop.
+            http://www.ericandre.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6">
+    <%= render '/components/post_form' %> <br><br><br>
+    <% for @p in @posts %>
+      <% if @p.created_at.strftime("%I").to_i == Time.current.strftime("%I").to_i && @p.created_at.strftime("%M").to_i >= Time.current.strftime("%M").to_i - 5 %>
+        <div class="panel panel-default post-panel">
+          <div class="panel-body row">
+
+            <div class="col-sm-12">
+              <p class="post-title">
+                <span class="post-owner">@<%= User.find(@p.user_id).username %></span>
+                <span class="post-created">-
+                  <% if Time.current.strftime("%M").to_i - @p.created_at.strftime("%M").to_i == 0 %>
+                    just now
+                  <% else %>
+                    <%= Time.current.strftime("%M").to_i - @p.created_at.strftime("%M").to_i %> minutes ago
+                  <% end %>
+                </span>
+                </p>
+              <p class="post-content"> <%= @p.content %> </p>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="panel panel-default post-panel">
+      <div class="panel-body row">
+
+        <div class="col-sm-12">
+          <p class="post-title">
+            <center>
+
+              <a style="text-decoration: none;" href="/">
+                W<span class="glyphicon glyphicon-sunglasses"></span>F
+              </a>
+
+              <a href="#top">
+                <p style="opacity: 0.7">Back To Top
+                  <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                </p>
+              </a>
+            </center>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-3">
+    <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+  </div>
