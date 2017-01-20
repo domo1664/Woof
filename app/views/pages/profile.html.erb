@@ -4,7 +4,7 @@
     <div class="panel panel-default">
       <div class="panel-body  no-back">
         <div class="col-sm-12"">
-          <h3 style="font-weight: bold;">@<%= params[:id] %></h3>
+          <h3 style="font-weight: bold; text-transform: uppercase;">@<%= params[:id] %></h3>
           <p>
             I Love Poop and other things but mostly. Drawing poop,
             taking pictures of poop and, my all time fav, taking a poop.
@@ -64,8 +64,4 @@
       </div>
     </div>
 
-  </div>
-
-  <div class="col-xs-3">
-    <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
   </div>

@@ -2,17 +2,22 @@
 
   <style>
 
-    body{
-      background: url('/bg.jpg') no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+    video{
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       min-width: 100%;
+       min-height: 100%;
+       width: auto;
+       height: auto;
+       z-index: -100;
+       background-size: cover;
     }
 
     h1{
       color: #7D8CA3;
       font-weight: bold;
+      /* text-shadow: 1px 1px 2px #ffffff; */
     }
 
     .container-index{
@@ -23,7 +28,8 @@
     .text{
       color: #7D8CA3;
       font-weight: 300;
-      font-size: 150%
+      font-size: 150%;
+      /* text-shadow: 1px 1px 2px #ffffff; */
     }
 
     .log-in{
@@ -40,15 +46,22 @@
     }
 
   </style>
-
+  <div class="fullscreen-bg">
+    <video loop muted autoplay class="fullscreen-bg__video">
+        <source src="bg.webm" type="video/webm">
+        <source src="bg.mp4" type="video/mp4">
+        <source src="bg.ogv" type="video/ogg">
+    </video>
+  </div>
   <div class="container-index row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
-      <h1>Welcome to Woof.</h1>
+      <h1>IT'S WOOF SZN!</h1>
       <p class="text">
-        Talk loosely amoungst your friends without
-        the fear of your words coming back to haunt
-        you. Share your silly thoughts or adventures.
+        Have no fear Woof is here. Share your silly thoughts. Trolling is
+        encouraged. Express yourself with style and pride. Don't hold
+        back that fire we wipe the mainframe every five woofin minutes.
+        Sign up or miss spilled tea.
       </p>
     </div>
     <div class="col-sm-3"></div>
