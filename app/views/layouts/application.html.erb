@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Woof</title>
+    <% if !user_signed_in? %>
+      <title>Woof</title>
+    <% else %>
+      <title>@<%= current_user.username.upcase %></title>
+    <% end %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
