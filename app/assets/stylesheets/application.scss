@@ -50,15 +50,17 @@ body{
   border: 2px solid #020300;
 }
 
-.navbar-brand{
-  position: absolute;
-  left: 45.45%;
-  margin-right: 25px !important;
-  display: block;
+.decor{
+  text-decoration: none;
+  color: #0072BB;
 }
 
 .font{
   font-size: 300%;
+}
+
+.decor:hover{
+  color:#134074;
 }
 
 .follow{
