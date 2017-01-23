@@ -23,6 +23,12 @@
             <div class="container">
               <div class="col-sm-3">&nbsp;</div>
               <div class="col-sm-6" style="margin-top: 5px;">
+                <!-- <div class="col-sm-2" style="font-size: 300%; opacity: 0.7; color: #7D8CA3; margin-left: -28vw;"> -->
+                  <span style="font-size: 300%; opacity: 0.7; color: #7D8CA3;">
+                    @<%= params[:id].upcase %>
+                  </span>
+                <!-- </div> -->
+                <div class="col-sm-2"></div>
                 <div class="col-sm-2" style="font-size: 100%; opacity: 0.7; color: #7D8CA3;"> WOOFS <br>
                   <h6 style="font-size:200%; color: #0072BB; opacity: 1.2;">
                     <%= User.find_by_username(params[:id]).posts.count %>
