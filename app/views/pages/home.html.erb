@@ -2,13 +2,12 @@
   $(document).on('ready page:load', function() {
     var REFRESH_INTERVAL_IN_MILLIS = 5000;
     setTimeout(function(){
-    // #disable page scrolling to top after loading page content
-    Turbolinks.enableTransitionCache(true);
-    targetInput = $('.form-control');
-    if(!targetInput.is(document.activeElement) && $('.hold').length) {
-      // # pass current page url to visit method
-      Turbolinks.visit(location.toString('/home'));
-    }
+      // #disable page scrolling to top after loading page content
+      targetInput = $('.form-control');
+      if(!targetInput.is(document.activeElement) && $('.hold').length) {
+        // # pass current page url to visit method
+        Turbolinks.visit(location.href, {scroll: false});
+      }
     }, REFRESH_INTERVAL_IN_MILLIS);
   });
 </script>
@@ -26,7 +25,6 @@
       <div class="panel-footer text-center">
         <div class="row">
           <div class="col-sm-12">
-
             <%= link_to  "@"+current_user.username, '/'+current_user.username,
                 style: 'text-decoration: none; color: #0072BB; text-transform: uppercase;' %>
           </div>
